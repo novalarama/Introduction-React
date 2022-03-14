@@ -1,11 +1,15 @@
 function Test (props){
     return (
-        <div style={{color: props.fontColor,fontFamily:`poppins`}}>
-            <h4>Name : {props.name}</h4>
-            <img src={props.avatar} style={{width:`100px`, height:`50px`,borderRadius:`50%`}}></img>
-            <p>
-                {props.children}
-            </p>
+        <div className="card" style={{width:`18rem`}}>
+            <img className="card-img-top" src={props.avatar} alt="Not found">
+            </img>
+
+            <div className="card-body">
+                <h6 className="txt-success">{props.name}</h6>
+                <p>
+                    {props.children}
+                </p>
+            </div>
         </div>
     )
 }
