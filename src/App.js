@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import Employee from './components/employee';
+import Employee from './components/Employee';
 import Test from "./components/Test";
 
 function App() {

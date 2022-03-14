@@ -9,27 +9,27 @@ function Employee(props) {
       </div>
       <div className="card-body">
         <div className="row">
-          <div className="col">
+          <div className="col-3">
             <img
-              className="card-img-top"
+              className="card-img-top img-rounded"
               src={props.gambar}
               alt="Not found" style={{width:`18rem`}}
             ></img>
           </div>
-          <div className="col float-left">
-            <i className="text-info">Nama</i>
+          <div className="col-4">
+            <small className="text-info">Nama</small>
             <h4 className="text-dark">{props.nama}</h4>
-            <i className="text-info">Tgl terbit</i>
+            <small className="text-info">Tgl terbit</small>
             <h4 className="text-dark">{props.tglTerbit}</h4>
-            <i className="text-info">Harga</i>
+            <small className="text-info">Harga</small>
             <h4 className="text-dark">{props.harga}</h4>
           </div>
-          <div className="col">
-            <i className="text-info">Penerbit</i>
+          <div className="col-4">
+            <small className="text-info">Penerbit</small>
             <h4 className="text-dark">{props.penerbit}</h4>
-            <i className="text-info">Kota Terbit</i>
+            <small className="text-info">Kota Terbit</small>
             <h4 className="text-dark">{props.kota}</h4>
-            <i className="text-info">Genre</i>
+            <small className="text-info">Genre</small>
             <h4 className="text-dark">{props.genre}</h4>
           </div>
         </div>
