@@ -19,16 +19,19 @@ function App() {
      <Test name="Cahyo" fontColor="blue"
      avatar="https://smktelkom-mlg.sch.id/assets/frontend/images/lanang_loro.png"
      >Cahyo adalah guru</Test> */}
-     {/* <Employee nama="Bumi" gambar="https://smktelkom-mlg.sch.id/assets/frontend/images/image1001.png"
+     <div className='accordion' id='accordion1'>
+     <Accordion id="item1"  header="Percobaan 1" parent="#accordion1" firstLine="Hello, this is my first ">
+     <Employee nama="Bumi" gambar="https://smktelkom-mlg.sch.id/assets/frontend/images/image1001.png"
      tglTerbit="2022-02-01" harga="Rp80.000" penerbit="Gramedia"
-     kota="Jakarta" genre="Novel" > */}
-     <Accordion header="Percobaan 1" firstLine="Hello, this is my first ">
-     It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+     kota="Jakarta" genre="Novel" />
      </Accordion>
 
-     <Accordion header="Percobaan 2" firstLine="Hello, this is my Second ">
-     It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+     <Accordion id="item2" header="Percobaan 2" parent="#accordion1" firstLine="Hello, this is my Second ">
+     <Employee nama="kereta" gambar="https://smktelkom-mlg.sch.id/assets/frontend/images/image1001.png"
+     tglTerbit="2022-02-01" harga="Rp80.000" penerbit="Gramedia"
+     kota="Jakarta" genre="Novel" />
      </Accordion>
+     </div>
 
      {/* </Employee> */}
     </div>

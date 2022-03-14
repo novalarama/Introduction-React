@@ -21,24 +21,20 @@ function Accordion(props) {
             </div> */}
       <div className="accordion" id="accordionExample">
         <div className="accordion-item">
-          <h2 className="accordion-header" id="headingOne">
+          <h2 className="accordion-header">
             <button
               className="accordion-button"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
+              data-bs-target={`#${props.id}`}
+              aria-expanded="true">
               {props.header}
             </button>
           </h2>
           <div
-            id="collapseOne"
+            id={props.id}
             className="accordion-collapse collapse show"
-            aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample"
-          >
+            data-bs-parent={props.parent}>
             <div className="accordion-body">
               <strong>{props.firstLine}</strong>
               <p>
