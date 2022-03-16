@@ -9,14 +9,14 @@ function Employee(props) {
       </div>
       <div className="card-body">
         <div className="row">
-          <div className="col-3">
+          <div className="col-lg-3 col-md-6">
             <img
               className="card-img-top img-rounded"
               src={props.gambar}
               alt="Not found" style={{width:`18rem`}}
             ></img>
           </div>
-          <div className="col-4">
+          <div className="col-lg-4 col-md-3">
             <small className="text-info">Nama</small>
             <h4 className="text-dark">{props.nama}</h4>
             <small className="text-info">Tgl terbit</small>
@@ -24,7 +24,7 @@ function Employee(props) {
             <small className="text-info">Harga</small>
             <h4 className="text-dark">{props.harga}</h4>
           </div>
-          <div className="col-4">
+          <div className="col-lg-4 col-md-3">
             <small className="text-info">Penerbit</small>
             <h4 className="text-dark">{props.penerbit}</h4>
             <small className="text-info">Kota Terbit</small>
