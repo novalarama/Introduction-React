@@ -63,6 +63,15 @@ export default function Student(props) {
           //restore to students from temp
           setStudent(temp)
 
+        } else if(action === `delete`){
+          if(window.confirm("Are you sure to delete this data?")){
+            let temp = [...student]
+            let index = temp.findIndex(item => item.id === id)
+      
+            temp.splice(index)
+      
+            setStudent(temp)
+          }
         }
         // 
     }
@@ -78,6 +87,13 @@ export default function Student(props) {
     setReadId(false)
   }
   
+  //function deleteStudent
+  let deleteStudent = item => {
+    setId(item.id)
+    setAction("delete")
+    
+  }
+
   return (
     <div>
       {/* isi return adalah komponen tampilan */}
@@ -108,7 +124,7 @@ export default function Student(props) {
                       <button className="btn btn-dark mx-2" onClick={() => editStudent(item)}>
                         Edit
                       </button>
-                      <button className="btn btn-outline-danger">
+                      <button className="btn btn-outline-danger" onClick={() => deleteStudent(item)}>
                         Delete
                       </button>
                     </div>
