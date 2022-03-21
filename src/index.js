@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Student from './pages/Student';
+import Book from './pages/Book';
+import Coba from './pages/Coba';
 
 // load library bootstrap for styling
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -12,7 +14,7 @@ import "bootstrap/dist/js/bootstrap.bundle"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Student />
+    <Coba />
   </React.StrictMode>,
   document.getElementById('root')
 );
