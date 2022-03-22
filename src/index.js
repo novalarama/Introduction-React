@@ -14,7 +14,7 @@ import "bootstrap/dist/js/bootstrap.bundle"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Coba />
+    <Book />
   </React.StrictMode>,
   document.getElementById('root')
 );
