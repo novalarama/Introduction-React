@@ -16,7 +16,7 @@ export default function Book(props) {
 
   useEffect(() => {
     // sebuah fungsi yang digunakan ketika komponen ditampilkan, return dulu baru useEffet
-    // inisisasi data array student (pemberian nilai awal)
+    // inisisasi data array Book (pemberian nilai awal)
     let arrayBook = [
       {
         id: 1,
@@ -37,7 +37,7 @@ export default function Book(props) {
     ];
     setBook(arrayBook);
 
-    // inisiasi state modalStudent
+    // inisiasi state modalBook
     setModalBook(new Modal(document.getElementById(`modal_book`)));
   }, []);
 
