@@ -13,7 +13,7 @@ export default function Student(props) {
   let [action, setAction] = useState("")
   let [readId, setReadId] = useState(true)
 
-  useEffect(() => {
+  useEffect(() => { // sebuah fungsi yang digunakan ketika komponen ditampilkan, return dulu baru useEffet
     // inisisasi data array student (pemberian nilai awal)
     let arrayStudent = [
       { id: 1, name: `Noval`, date: `13 November 2004` },
@@ -62,9 +62,7 @@ export default function Student(props) {
 
           //restore to students from temp
           setStudent(temp)
-
         }
-        // 
     }
 
   //function editStudent
@@ -78,6 +76,21 @@ export default function Student(props) {
     setReadId(false)
   }
   
+  //function deleteStudent
+  let deleteStudent = item => {
+    // setId(item.id)
+    // setAction("delete")
+    if(window.confirm(`Yakin Menghapus ?`)){
+      let temp = [...student]
+    
+      let index = temp.findIndex(item => item.id === id)
+
+    temp.splice(index, 1)
+
+    setStudent(temp)
+    }
+  }
+
   return (
     <div>
       {/* isi return adalah komponen tampilan */}
@@ -108,7 +121,7 @@ export default function Student(props) {
                       <button className="btn btn-dark mx-2" onClick={() => editStudent(item)}>
                         Edit
                       </button>
-                      <button className="btn btn-outline-danger">
+                      <button className="btn btn-outline-danger" onClick={() => deleteStudent(item)}>
                         Delete
                       </button>
                     </div>
@@ -123,6 +136,25 @@ export default function Student(props) {
                 onClick={() => addStudent()}>
                     Add Student
                 </button>
+
+                {/* Create dropdown */}
+                <select>
+                  {student.map(item => (
+                    <option value={item.id}>
+                        {item.name}
+                    </option>
+                  ))}
+                </select>
+
+                {/* Create Radio Button */}
+                {student.map(item => (
+                  <div>
+                    <input type={`radio`} name={`name`} value={item.id} />
+                    <label>
+                      {item.name}
+                    </label>
+                  </div>
+                ))}
 
             {/* Modal component */}
             <div className="modal " id="modal_student">
