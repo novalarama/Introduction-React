@@ -1,37 +1,40 @@
 import { useState, useEffect } from "react";
 import { Modal } from "bootstrap";
-import { FaTrash, FaPen } from "react-icons/fa"
+import { FaTrash, FaPen } from "react-icons/fa";
 
 export default function Book(props) {
   let [book, setBook] = useState([]);
   let [modalBook, setModalBook] = useState(null);
-  let [id, setId] = useState(0);
+  let [isbn, setIsbn] = useState(0);
   let [name, setName] = useState("");
   let [author, setAuthor] = useState("");
   let [publisher, setPublisher] = useState("");
-  let [genre, setGenre] = useState("");
+  let [price, setPrice] = useState(0);
+  let [rating, setRating] = useState("");
   let [image, setImage] = useState("");
   let [action, setAction] = useState("");
-  let [readId, setReadId] = useState(true);
+  let [readIsbn, setReadIsbn] = useState(true);
 
   useEffect(() => {
     // sebuah fungsi yang digunakan ketika komponen ditampilkan, return dulu baru useEffet
     // inisisasi data array Book (pemberian nilai awal)
     let arrayBook = [
       {
-        id: 1,
+        isbn: 1,
         name: `Bumi`,
         author: `Tere Liye`,
         publisher: `Gramedia`,
-        genre: `Misteri`,
+        price: 78000,
+        rating: `4.5`,
         image: `https://images.tokopedia.net/img/cache/900/VqbcmM/2021/9/27/ff858419-758c-4571-b440-20b6a6032e8d.jpg`,
       },
       {
-        id: 2,
+        isbn: 2,
         name: `Ananta`,
         author: `Risa Sarasvati`,
         publisher: `Gramedia`,
-        genre: `Romance`,
+        price: 88000,
+        rating: `4.8`,
         image: `https://www.bukukita.com/babacms/displaybuku/105717_f.jpg`,
       },
     ];
@@ -47,11 +50,12 @@ export default function Book(props) {
     modalBook.hide();
     if (action === `insert`) {
       let newData = {
-        id: id,
+        isbn: isbn,
         name: name,
         author: author,
         publisher: publisher,
-        genre: genre,
+        price: price,
+        rating: rating,
         image: image,
       };
 
@@ -62,14 +66,15 @@ export default function Book(props) {
     } else if (action === `edit`) {
       //store data book
       let temp = [...book];
-      //findindex of selected data by Id
-      let index = temp.findIndex((item) => item.id === id);
+      //findindex of selected data by isbn
+      let index = temp.findIndex((item) => item.isbn === isbn);
 
       //update data based on founded index
       temp[index].name = name;
       temp[index].author = author;
       temp[index].publisher = publisher;
-      temp[index].genre = genre;
+      temp[index].price = price;
+      temp[index].rating = rating;
       temp[index].image = image;
 
       //restore to books from temp
@@ -82,38 +87,40 @@ export default function Book(props) {
     // open modal
     modalBook.show();
     // reset isi dari setiap inputan
-    setId(0);
+    setIsbn(0);
     setName("");
     setAuthor("");
     setPublisher("");
-    setGenre("");
+    setPrice(0);
+    setRating("");
     setImage("");
     setAction("insert");
-    setReadId(true);
+    setReadIsbn(true);
   };
 
   //function editbook
   let editBook = (item) => {
     modalBook.show();
 
-    setId(item.id);
+    setIsbn(item.isbn);
     setName(item.name);
     setAuthor(item.author);
     setPublisher(item.publisher);
-    setGenre(item.genre);
+    setPrice(item.price);
+    setRating(item.rating);
     setImage(item.image);
     setAction("edit");
-    setReadId(false);
+    setReadIsbn(false);
   };
 
   //function deleteBook
   let deleteBook = (item) => {
-    // setId(item.id)
+    // setisbn(item.isbn)
     // setAction("delete")
     if (window.confirm(`Yakin Menghapus ?`)) {
       let temp = [...book];
 
-      let index = temp.findIndex((item) => item.id === id);
+      let index = temp.findIndex((item) => item.isbn === isbn);
 
       temp.splice(index, 1);
 
@@ -131,7 +138,7 @@ export default function Book(props) {
           <div className="row">
             <div className="col-11 mt-2">
               <h3 className="text-white">
-                <b>Noval's Library</b>
+                <b>Noval's Books Store</b>
               </h3>
             </div>
             <div className="col-1 mt-2">
@@ -151,14 +158,17 @@ export default function Book(props) {
                 item //map adalah fungsi dari array untuk scan setiap isi array
               ) => (
                 <li className="list-group-item flex-fill">
-                  <div className="row" key={`key${item.id}`}>
+                  <div className="row" key={`key${item.isbn}`}>
                     <div className="col-3">
                       {/* <!-- untuk gambar --> */}
-                      <img src={item.image} width="80%" />
+                      <img src={item.image} width="80%" alt="" />
                     </div>
                     <div className="col-2">
-                      <small>ID</small>
-                      <h5>{item.id}</h5>
+                      <small>ISBN</small>
+                      <h5>{item.isbn}</h5>
+
+                      <small>Rating</small>
+                      <h5>{item.rating}</h5>
                     </div>
                     <div className="col-2">
                       <small>Name</small>
@@ -171,8 +181,8 @@ export default function Book(props) {
                       <small>Publisher</small>
                       <h5>{item.publisher}</h5>
 
-                      <small>Genre</small>
-                      <h5>{item.genre}</h5>
+                      <small>Price</small>
+                      <h5>{item.price}</h5>
                     </div>
 
                     <div className="col-2">
@@ -181,13 +191,13 @@ export default function Book(props) {
                         className="btn btn-danger mx-2"
                         onClick={() => editBook(item)}
                       >
-                        <FaTrash icon="fa-solid fa-trash" />
+                        <FaTrash icon="fa-solisbn fa-trash" />
                       </button>
                       <button
                         className="btn btn-outline-dark"
                         onClick={() => deleteBook(item)}
                       >
-                        <FaPen icon="fa-solid fa-pen" />
+                        <FaPen icon="fa-solisbn fa-pen" />
                       </button>
                     </div>
                   </div>
@@ -213,13 +223,13 @@ export default function Book(props) {
                   ></button>
                 </div>
                 <div className="modal-body">
-                  ID
+                  ISBN
                   <input
                     type={`number`}
                     className="form-control mb-2"
-                    value={id}
-                    onChange={(ev) => setId(ev.target.value)}
-                    readOnly={!readId}
+                    value={isbn}
+                    onChange={(ev) => setIsbn(ev.target.value)}
+                    readOnly={!readIsbn}
                   />
                   Name
                   <input
@@ -242,12 +252,19 @@ export default function Book(props) {
                     value={publisher}
                     onChange={(ev) => setPublisher(ev.target.value)}
                   />
-                  Genre
+                  Price
+                  <input
+                    type={`number`}
+                    className="form-control mb-2"
+                    value={price}
+                    onChange={(ev) => setPrice(ev.target.value)}
+                  />
+                  Rating
                   <input
                     type={`text`}
                     className="form-control mb-2"
-                    value={genre}
-                    onChange={(ev) => setGenre(ev.target.value)}
+                    value={rating}
+                    onChange={(ev) => setRating(ev.target.value)}
                   />
                   Image
                   <input
