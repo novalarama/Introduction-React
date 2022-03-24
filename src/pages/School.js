@@ -71,10 +71,11 @@ useEffect(() => {
   }
     return(
         <div>
-            <div className="container-fluit">
-            {school.map(item => (
+          {/* <h1 style={{fontFamily:`poppins`}} className="align-center">List Score of XIR4</h1> */}
+          {school.map(item => (
                 <ScoreList
-                key={`key-${item.id}`} 
+                key={`key-${item.id}`}
+                id={item.id} 
                 name={item.name}
                 math={item.math}
                 english={item.english}
@@ -83,7 +84,6 @@ useEffect(() => {
                 status={status(hitung(item.math, item.english, item.chemistry))}
                 />
             ))}
-        </div>
         </div>
     )
 }

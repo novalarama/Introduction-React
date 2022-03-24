@@ -1,38 +1,37 @@
 export default function ScoreList(props) {
   return (
-    <div
-      className="row m-2 p-2 rounded-lg"
-      style={{ border: `2px solid lightgrey` }}
-    >
-      {/* Cover Area */}
-      <div className="col-lg-3">
-        <small>Name</small>
-        <h4>{props.name}</h4>   
-      </div>
+    <div className="container form-control" style={{fontFamily:`poppins`}}>
+      
+        <div className="card-body">
+          <div className="row">
+          <div className="col-1">
+              <h3 className="mt-auto">{props.id}</h3>
+            </div>
+            <div className="col-4">
+              <small>Name</small>
+              <h3>{props.name}</h3>
+            </div>
+            <div className="col-1">
+              <small>Math</small>
+              <h5>{props.math}</h5>
 
-      {/* Labels Area */}
-      <div className="col-lg-3">
-      <small>Math</small>
-      <h4>{props.math}</h4> 
+              <small>English</small>
+              <h5>{props.english}</h5>
+            </div>
+            <div className="col-2">
+              <small>Chemistry</small>
+              <h5>{props.chemistry}</h5>
+            </div>
+            <div className="col-4">
+              <small>Rata-rata</small>
+              <h5>{props.rata}</h5>
 
-      <small>English</small>
-      <h4>{props.english}</h4>  
-
-      <small>Chemistry</small>
-      <h4>{props.chemistry}</h4>  
-      </div>
-
-      <div className="col-lg-3">
-      <small>Rata</small>
-      <h4>{props.rata}</h4>
-
-      <small>Status</small>
-      <h4>{props.status}</h4>  
-      </div>
-
-      <div className="col-lg-3">
-        
-      </div>
+              <small>Status</small>
+              <h5>{props.status}</h5>
+            </div>
+          </div>
+        </div>
+      
     </div>
   );
 }
