@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Modal } from "bootstrap";
 import { FaTrash, FaPen } from "react-icons/fa";
+import BookList from "../components/BookList";
 
 export default function Book(props) {
   let [book, setBook] = useState([]);
@@ -191,13 +192,13 @@ export default function Book(props) {
                         className="btn btn-danger mx-2"
                         onClick={() => editBook(item)}
                       >
-                        <FaTrash icon="fa-solisbn fa-trash" />
+                        <FaTrash icon="fa-solid fa-trash" />
                       </button>
                       <button
                         className="btn btn-outline-dark"
                         onClick={() => deleteBook(item)}
                       >
-                        <FaPen icon="fa-solisbn fa-pen" />
+                        <FaPen icon="fa-solid fa-pen" />
                       </button>
                     </div>
                   </div>
