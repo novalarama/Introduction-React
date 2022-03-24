@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import Student from './pages/Student';
 import Book from './pages/Book';
 import Coba from './pages/Coba';
+import Books from './pages/Books';
+import School from './pages/School';
 
 // load library bootstrap for styling
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -14,7 +16,7 @@ import "bootstrap/dist/js/bootstrap.bundle"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Book />
+    <School />
   </React.StrictMode>,
   document.getElementById('root')
 );
