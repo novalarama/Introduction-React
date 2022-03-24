@@ -3,13 +3,6 @@ import ScoreList from "../components/ScoreList";
 
 export default function School(props){
 let [school, setSchool] = useState([])
-let [rata, setRata] = useState(0)
-
-
-// for (let i = 0; i < school.length; i++) {
-//     setRata(((school[i].math)+(school[i].english)+(school[i].chemistry))/3)
-    
-// }
 
 useEffect(() => {
     // sebuah fungsi yang digunakan ketika komponen ditampilkan, return dulu baru useEffet
@@ -52,9 +45,6 @@ useEffect(() => {
       },
     ];
     setSchool(arrayScore);
-
-    // inisiasi state modalBook
-    // setModalBook(new Modal(document.getElementById(`modal_book`)));
   }, []);
 
   let hitung = (math, english, chemistry) =>{

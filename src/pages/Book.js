@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Modal } from "bootstrap";
 import { FaTrash, FaPen } from "react-icons/fa";
-import BookList from "../components/BookList";
+// import BookList from "../components/BookList";
 
 export default function Book(props) {
   let [book, setBook] = useState([]);
