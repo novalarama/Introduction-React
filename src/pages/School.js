@@ -6,9 +6,9 @@ let [school, setSchool] = useState([])
 
 useEffect(() => {
     // sebuah fungsi yang digunakan ketika komponen ditampilkan, return dulu baru useEffet
-    // inisisasi data array Book (pemberian nilai awal)
+    // inisisasi data array Score (pemberian nilai awal)
     let arrayScore = [
-      {
+      { 
         id: 1,
         name: `Aira Johnson`,
         math: 80,
@@ -54,9 +54,17 @@ useEffect(() => {
 
   let status = (rataRata) =>{
       if(rataRata >= 75){
-          return `Lulus`
+          return (
+            <h6>
+              <span className="badge rounded-pill bg-success">Lulus</span>
+            </h6>
+          )
       }else if(rataRata <= 74){
-          return `Tidak Lulus`
+        return (
+          <h6>
+            <span className="badge rounded-pill bg-danger">Tidak Lulus</span>
+          </h6>
+        )
       }
   }
     return(

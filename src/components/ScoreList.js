@@ -1,20 +1,23 @@
 export default function ScoreList(props) {
   return (
-    <div className="container form-control" style={{fontFamily:`poppins`}}>
-      
-        <div className="card-body">
+    <div className="container form-control bg-warning" style={{fontFamily:`poppins`}}>
+        <div className="card-body bg-warning text-dark">
           <div className="row">
           <div className="col-1">
               <h3 className="mt-auto">{props.id}</h3>
             </div>
-            <div className="col-4">
+            <div className="col-3">
               <small>Name</small>
               <h3>{props.name}</h3>
+            </div>
+            <div className=" col-1 d-flex" style={{height: `100px`}}>
+              <div className="vr d-flex"></div>
             </div>
             <div className="col-1">
               <small>Math</small>
               <h5>{props.math}</h5>
-
+            </div>
+            <div className="col-1">
               <small>English</small>
               <h5>{props.english}</h5>
             </div>
@@ -22,7 +25,7 @@ export default function ScoreList(props) {
               <small>Chemistry</small>
               <h5>{props.chemistry}</h5>
             </div>
-            <div className="col-4">
+            <div className="col-2">
               <small>Rata-rata</small>
               <h5>{props.rata}</h5>
 
