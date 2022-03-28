@@ -8,6 +8,7 @@ import Book from './pages/Book';
 import Coba from './pages/Coba';
 import Books from './pages/Books';
 import School from './pages/School';
+import Grocery from './pages/Grocery';
 
 // load library bootstrap for styling
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -16,7 +17,7 @@ import "bootstrap/dist/js/bootstrap.bundle"
 
 ReactDOM.render(
   <React.StrictMode>
-    <School />
+    <Grocery />
   </React.StrictMode>,
   document.getElementById('root')
 );
