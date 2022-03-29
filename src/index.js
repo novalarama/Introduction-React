@@ -17,7 +17,7 @@ import "bootstrap/dist/js/bootstrap.bundle"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Grocery />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
